@@ -6,10 +6,6 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 
-from future import standard_library
-
-standard_library.install_aliases()
-
 from ..ares import get_czech_zip_code, guess_czech_street_from_full_text_address
 
 from unittest import TestCase

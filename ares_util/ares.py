@@ -8,11 +8,8 @@ from __future__ import absolute_import
 import re
 
 from builtins import *
-from future import standard_library
 import requests
 from requests.exceptions import RequestException
-
-standard_library.install_aliases()
 
 from builtins import map
 from builtins import str
@@ -110,7 +107,7 @@ def get_czech_zip_code(ares_data, full_text_address):
     if ares_data and ares_data.isdigit():
         return ares_data.strip()
 
-    p = re.compile(ur'PS[CČ]?\s+(?P<zip_code>\d+)', re.IGNORECASE | re.UNICODE)
+    p = re.compile(r'PS[CČ]?\s+(?P<zip_code>\d+)', re.IGNORECASE | re.UNICODE)
     search = re.search(p, full_text_address)
 
     if search:
